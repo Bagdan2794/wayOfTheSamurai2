@@ -1,0 +1,1 @@
+This is my JS training in the "Way of the Samurai" course
