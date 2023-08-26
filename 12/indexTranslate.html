@@ -9,24 +9,32 @@
 
 <body>
     <script> //const - это постоянная переменная, ее значение неизменно
-        const world0 = {  // world0 - это объект
-            original: 'Hi', // original - это свойство объекта, которое так же может в ключать в себя другие свойства и становиться для включенных свойств объектом
-            translation: 'Привет',
+        const vocabulary = {
+            words: {
+                word0: {  // word0 - это объект
+                    original: 'Hi', // original - это свойство объекта, которое так же может в ключать в себя другие свойства и становиться для включенных свойств объектом
+                    translation: 'Привет',
+                },
+                word1: {
+                    original: 'Bye',
+                    translation: 'Пока',
+                },
+                word2: {
+                    original: 'Programmer',
+                    translation: 'Программист',
+                },
+
+            },
+
+            wordsCount: 3,
         }
 
-        const world1 = {
-            original: 'Bye',
-            translation: 'Пока',
-        }
-
-        const world2 = {
-            original: 'Programmer',
-            translation: 'Программист',
-        }
-
-        const finishMessage = {
-            true: 'Молодец',
-            false: 'МОлодец, попробуй еще раз',
+        const message = {
+            start: "Привет! В данной программе тебе нужно перевести слова с английского языка на русский. Поехали!",
+            finish: {
+                true: 'Молодец',
+                false: 'МОлодец, попробуй еще раз',
+            },
         }
 
         const AnswerCount = {
@@ -35,32 +43,34 @@
         }
 
         const settings = {
-            worldsCount: 3,
             correctAnswerMinPercent: 50,
         }
 
-        const userAnser0 = prompt(world0.original, 'перевод') //переменной userAnswer присваивается значение введенного пользователем текста
-        document.write(userAnser0, ' is ', userAnser0 === world0.translation, '<br>') // document - объект, write - функция, () - аргумент функции
-        if (userAnser0 === world0.translation) { // === булинговое значение true or false
+        // --------------------
+        window.alert(message.start)
+
+        const userAnser0 = prompt(vocabulary.words.word0.original, 'перевод') //переменной userAnswer присваивается значение введенного пользователем текста
+        document.write(userAnser0, ' is ', userAnser0 === vocabulary.words.word0.translation, '<br>') // document - объект, write - функция, () - аргумент функции
+        if (userAnser0 === vocabulary.words.word0.translation) { // === булинговое значение true or false
             AnswerCount.correct = AnswerCount.correct + 1
         }
-        const userAnser1 = prompt(world1.original, 'перевод')
-        document.write(userAnser1, ' is ', userAnser1 === world1.translation, '<br>')
-        if (userAnser1 === world1.translation) {
+        const userAnser1 = prompt(vocabulary.words.word1.original, 'перевод')
+        document.write(userAnser1, ' is ', userAnser1 === vocabulary.words.word1.translation, '<br>')
+        if (userAnser1 === vocabulary.words.word1.translation) {
             AnswerCount.correct = AnswerCount.correct + 1
         }
-        const userAnser2 = prompt(world2.original, 'перевод')
-        document.write(userAnser2, ' is ', userAnser2 === world2.translation, '<br>')
-        if (userAnser2 === world2.translation) {
+        const userAnser2 = prompt(vocabulary.words.word2.original, 'перевод')
+        document.write(userAnser2, ' is ', userAnser2 === vocabulary.words.word2.translation, '<br>')
+        if (userAnser2 === vocabulary.words.word2.translation) {
             AnswerCount.correct = AnswerCount.correct + 1
         }
-        AnswerCount.percent = AnswerCount.correct / settings.worldsCount * 100
+        AnswerCount.percent = AnswerCount.correct / vocabulary.wordsCount * 100
         if (AnswerCount.percent > settings.correctAnswerMinPercent) {
-            document.write(finishMessage.true)
+            document.write(message.finish.true)
         }
         else
 
-            document.write(finishMessage.false)
+            document.write(message.finish.false)
     </script>
 </body>
 
