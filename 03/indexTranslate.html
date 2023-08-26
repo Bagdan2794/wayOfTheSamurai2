@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+</head>
+
+<body>
+    <script> //const - это постоянная переменная, ее значение неизменно
+        const world0 = {  // world0 - это объект
+            original: 'Hi', // original - это свойство объекта, которое так же может в ключать в себя другие свойства и становиться для включенных свойств объектом
+            translation: 'Привет',
+        }
+
+        const world1 = {
+            original: 'Bye',
+            translation: 'Пока',
+        }
+
+        const world2 = {
+            original: 'Programmer',
+            translation: 'Программист',
+        }
+
+        const finishMessage = {
+            true: 'Молодец',
+            false: 'МОлодец, попробуй еще раз',
+        }
+
+        const AnswerCount = {
+            correct: 0,
+            percent: 0
+        }
+
+        const settings = {
+            worldsCount: 3,
+            correctAnswerMinPercent: 50,
+        }
+
+        const userAnser0 = prompt(world0.original, 'перевод') //переменной userAnswer присваивается значение введенного пользователем текста
+        document.write(userAnser0, ' is ', userAnser0 === world0.translation, '<br>') // document - объект, write - функция, () - аргумент функции
+        if (userAnser0 === world0.translation) { // === булинговое значение true or false
+            AnswerCount.correct = AnswerCount.correct + 1
+        }
+        const userAnser1 = prompt(world1.original, 'перевод')
+        document.write(userAnser1, ' is ', userAnser1 === world1.translation, '<br>')
+        if (userAnser1 === world1.translation) {
+            AnswerCount.correct = AnswerCount.correct + 1
+        }
+        const userAnser2 = prompt(world2.original, 'перевод')
+        document.write(userAnser2, ' is ', userAnser2 === world2.translation, '<br>')
+        if (userAnser2 === world2.translation) {
+            AnswerCount.correct = AnswerCount.correct + 1
+        }
+        AnswerCount.percent = AnswerCount.correct / settings.worldsCount * 100
+        if (AnswerCount.percent > settings.correctAnswerMinPercent) {
+            document.write(finishMessage.true)
+        }
+        else
+
+            document.write(finishMessage.false)
+    </script>
+</body>
+
+</html>

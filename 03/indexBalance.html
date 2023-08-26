@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        document.write('START', '<br>', '<br>')
+
+        let balance = window.prompt('Enter You balance', 'in USD')
+        if (window.isNaN(balance)) {
+            document.write('Incorrect number of balanse')
+        } else {
+            const product1PriceString = window.prompt("Product one Price", 'in USD')
+            const product1Price = window.Number(product1PriceString)
+
+            if (window.isNaN(product1Price)) {
+                document.write("Incorrect price for product 0ne", '<br>')
+            } else {
+                if (balance < product1Price) {
+                    document.write('Not enough money to buy product one', '<br>')
+                } else {
+                    document.write('Product one is purchased', '<br>')
+                    balance -= product1Price
+                }
+            }
+            const product2PriceString = window.prompt("Product two Price", 'in USD')
+            const product2Price = window.Number(product2PriceString)
+
+            if (window.isNaN(product2Price)) {
+                document.write("Incorrect price for product two", '<br>')
+            } else {
+                if (balance < product2Price) {
+                    document.write('Not enough money to buy product two', '<br>')
+                } else {
+                    document.write('Product two is purchased', '<br>')
+                    balance -= product2Price
+                }
+            }
+            const product3PriceString = window.prompt("Product three Price", 'in USD')
+            const product3Price = window.Number(product3PriceString)
+
+            if (window.isNaN(product3Price)) {
+                document.write("Incorrect price for product three", '<br>')
+            } else {
+                if (balance < product3Price) {
+                    document.write('Not enough money to buy product three', '<br>')
+                } else {
+                    document.write('Product three purchased', '<br>')
+                    balance -= product3Price
+                }
+            }
+        }
+
+        document.write('<br>','<br>', 'You balance: ', balance, ' USD', '<br>','<br>', 'END')
+
+    </script>
+</body>
+
+</html>
