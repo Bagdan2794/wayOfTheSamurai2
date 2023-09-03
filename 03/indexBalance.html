@@ -26,7 +26,7 @@
                     document.write('Not enough money to buy product one', '<br>')
                 } else {
                     document.write('Product one is purchased', '<br>')
-                    balance -= product1Price
+                    balance = balance - product1Price
                 }
             }
             const product2PriceString = window.prompt("Product two Price", 'in USD')
@@ -39,7 +39,7 @@
                     document.write('Not enough money to buy product two', '<br>')
                 } else {
                     document.write('Product two is purchased', '<br>')
-                    balance -= product2Price
+                    balance = balance - product2Price
                 }
             }
             const product3PriceString = window.prompt("Product three Price", 'in USD')
@@ -52,7 +52,7 @@
                     document.write('Not enough money to buy product three', '<br>')
                 } else {
                     document.write('Product three purchased', '<br>')
-                    balance -= product3Price
+                    balance = balance - product3Price
                 }
             }
         }
