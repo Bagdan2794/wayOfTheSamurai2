@@ -32,8 +32,8 @@
         const message = {
             start: "Привет! В данной программе тебе нужно перевести слова с английского языка на русский. Поехали!",
             finish: {
-                true: 'Молодец',
-                false: 'МОлодец, попробуй еще раз',
+                good: 'Молодец',
+                bad: 'МОлодец, попробуй еще раз',
             },
         }
 
@@ -67,11 +67,11 @@
         }
         AnswerCount.percent = AnswerCount.correct / vocabulary.wordsCount * 100
         if (AnswerCount.percent > settings.correctAnswerMinPercent) {
-            document.write(message.finish.true)
+            document.write(message.finish.good)
         }
         else
 
-            document.write(message.finish.false)
+            document.write(message.finish.bad)
     </script>
 </body>
 
